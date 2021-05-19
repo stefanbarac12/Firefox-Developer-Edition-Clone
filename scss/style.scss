@@ -1,0 +1,322 @@
+@import 'starter';
+@import 'mixins';
+
+nav {
+    @include flex(space-around, center);
+    ul {
+        @include flex(center, center);
+        li {
+            &:first-child {
+                margin-right: 8px;
+                transition: $transition;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            &:not(li:first-child) {
+                margin-right: 40px;
+            }
+
+            a {
+                font-size: 1.2rem;
+                transition: $transition;
+                color: $fontColor;
+                font-weight: bold;
+                border-bottom: 2px solid transparent;
+                padding-bottom: 10px;
+
+                &:hover {
+                    border-bottom: 2px solid $fontColor;
+                }
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    h2 {
+        color: $plava;
+        border: 2px solid $plava;
+        padding: 10px 40px;
+        border-radius: 10px;
+        transition: $transition;
+        font-weight: normal;
+        font-size: 1.2rem;
+
+        &:hover {
+            background-color: $plava;
+            color: $white;
+        }
+    }
+}
+
+header {
+    @include flex(center, center, column);
+    height: 80vh;
+    text-align: center;
+    color: $fontColor;
+
+    img {
+        width: 400px;
+    }
+
+    h1 {
+        margin: 40px 0;
+        font-size: 3rem;
+    }
+
+    p {
+        line-height: 1.6;
+        
+        &:last-of-type {
+            font-size: 0.8rem;
+        }
+    }
+
+    button {
+        @include btn($plava, $white, $white, $plava);
+        margin: 30px 0;
+    }
+
+    small {
+        margin-bottom: 40px;
+    }
+}
+
+.images {
+    margin-bottom: 100px;
+
+    img {
+        &:last-of-type {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: -14.01%;
+        }
+    }
+}
+
+.products {
+    h4 {
+        font-size: 1.2rem;  
+    }
+
+    h2 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin: 10px 0 20px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    article {
+        @include flex(space-between, stretch);
+        margin-top: 200px;
+
+        div {
+            flex: 0 0 45%;
+            margin-bottom: 100px;
+
+            h4 {
+                margin-top: 50px;
+            }
+
+            h2 {
+                letter-spacing: 1px;
+            }
+
+            p {
+                color: $black;
+                line-height: 1.6;
+            }
+
+            a {
+                color: $plava;
+                text-decoration: underline;
+                font-weight: bold;
+                cursor: pointer;
+                transition: $transition;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+        
+    }
+}
+
+.services {
+    @include flex(space-between, center);
+
+    div {
+        flex: 0 0 31%;
+        margin-bottom: 80px;
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        a {
+            color: rgb(98, 4, 98);
+            text-decoration: underline;
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+}
+
+footer {
+    @include bg(url(../img/newsletter.png), cover);
+    padding: 50px;
+
+    article {
+        @include flex(center, center);
+        background-color: $white;
+        padding: 50px;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 60%;
+        }
+
+        div:last-child {
+            flex: 1;
+            margin-left: 100px;
+
+            input {
+                display: block;
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            ::placeholder {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            button {
+                @include btn($plava, $white, $white, $plava);
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        ul {
+            li {
+                &:not(li:first-child) {
+                    margin-right: 20px;
+                }
+    
+                a {
+                    border-bottom: none;
+                    padding-bottom: 0px;
+    
+                    &:hover {
+                        border-bottom: none;
+                    }
+    
+                    img {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    
+        h2 {
+            margin-top: 50px;
+        }
+    }
+    
+    header {
+        img {
+            width: 300px;
+        }
+    
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    .images {
+        img {
+            &:last-of-type {
+                width: 80%;
+                margin-top: -22.42%;
+            }
+        }
+    }
+    
+    .products {
+        article {
+            @include flex(space-between, stretch);
+            margin-top: 100px;
+    
+            div {
+                text-align: center;
+                flex: 0 0 100%;    
+            }
+        }
+    }
+    
+    .services {
+        div {
+            flex: 0 0 100%;
+            text-align: center;
+    
+            h3 {
+                margin-top: 40px;
+            }
+    
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+    
+    footer {
+        padding: 20px;
+    
+        article {
+            padding: 20px;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+    
+            img {
+                margin: 0 auto;
+            }
+    
+            div:last-child {
+                margin-left: 0px;
+    
+                input {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

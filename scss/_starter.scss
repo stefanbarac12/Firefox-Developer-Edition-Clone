@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,600,700,900&display=swap');
+
+
+$fontPrimary:'Inter', sans-serif;
+$fontColor: #20123a;
+$plava: #0060df;
+$buttonHover: #0250bb;
+$tamnoPlava: #08204e;
+$white: #fff;
+$black: #000;
+$transition: .4s ease;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $fontPrimary;
+    font-size: 16px;
+    color: $fontColor;
+    margin-top: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: $transition;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;
+    }
+}
